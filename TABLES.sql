@@ -46,7 +46,7 @@ CREATE TABLE Patients
 	);
 GO
 	CREATE TABLE BLOOD_BANKS
-	(
+	(	Blood_Bank_Id int Primary Key Identity (1,1),
 		Blood_Bank_Name varchar(40)	NOT NULL,
 		Address_Street varchar(20) NOT NULL,	
 		City varchar(20) NOT NULL,
@@ -54,8 +54,23 @@ GO
 		Country varchar(20) NOT NULL,
 		Number_Of_Donors tinyint NOT NULL,
 	);
+GO
+CREATE TABLE Patient_Blood_Bank
+(
+	Blood_Bank_Id int NOT NULL,
+	Patient_Id int NOT NULL
+);
 
+GO 
+CREATE TABLE Donor_Blood_Bank
+(
+	Blood_Bank_Id int NOT NULL,
+	Donor_Id int NOT NULL,
+);
 
+ALTER TABLE Blood_Donation_Management.Patients_Donors
+	ADD CONSTRAINT FKPatient_Id
+	FOREIGN KEY (Patient_Id) REFERENCES Blood_Donation_Management.Patients(Patient_Id);
 
 
 
