@@ -5,9 +5,10 @@ CREATE SCHEMA Blood_Donation_Management
 GO
 CREATE TABLE Patients 
 	(  Patient_Id int Primary Key Identity (1, 1), 
-	   First_Name  varchar (20) NOT NULL,
+	   First_Name  varchar (30) NOT NULL,
 	   Middle_Name varchar (20) NOT NULL,
-	   Last_Name  varchar (20) NOT NULL,
+	   Last_Name  varchar (30) NOT NULL,
+	   Date_of_Birth Date NOT NULL,
 	   Gender varchar (10) NOT NUll,
 	   City varchar(20) NOT NULL, 
 	   Province  varchar(20) NOT NULL,
@@ -26,10 +27,11 @@ CREATE TABLE Patients
 
 	CREATE TABLE Donors
 	(  Donor_Id int Primary Key Identity (1, 1), 
-	   First_Name  varchar (20) NOT NULL,
+	   First_Name  varchar (30) NOT NULL,
 	   Middle_Name varchar (20) NOT NULL,
-	   Last_Name  varchar (20) NOT NULL,
+	   Last_Name  varchar (30) NOT NULL,
 	   Gender varchar (10) NOT NUll,
+	   Date_of_Birth Date NOT NULL,
 	   City varchar(20) NOT NULL, 
 	   Province  varchar(20) NOT NULL,
 	   Country  varchar (30) NOT NULL,
